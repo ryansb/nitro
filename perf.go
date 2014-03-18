@@ -25,7 +25,6 @@
 package nitro
 
 import (
-	"flag"
 	"fmt"
 	"os"
 	"runtime"
@@ -96,8 +95,6 @@ func (b *B) resetTimer() {
 // Call this first to get the performance object
 // Should be called at the top of your function.
 func Initialize() *B {
-	flag.BoolVar(&AnalysisOn, "stepAnalysis", false, "display memory and timing of different steps of the program")
-
 	b := &B{}
 	b.initialTime = time.Now()
 	runtime.GC()
